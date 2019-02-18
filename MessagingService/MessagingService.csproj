@@ -1,0 +1,60 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Context\**" />
+    <Compile Remove="Model\**" />
+    <Compile Remove="Repositories\**" />
+    <Content Remove="Context\**" />
+    <Content Remove="Model\**" />
+    <Content Remove="Repositories\**" />
+    <EmbeddedResource Remove="Context\**" />
+    <EmbeddedResource Remove="Model\**" />
+    <EmbeddedResource Remove="Repositories\**" />
+    <None Remove="Context\**" />
+    <None Remove="Model\**" />
+    <None Remove="Repositories\**" />
+    <Compile Remove="Controllers\StaffMessageController.cs" />
+    <Content Remove="Views\StaffMessage\Staff.cshtml" />
+    <Content Remove="Views\StaffMessage\View.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\StaffMessage\StaffMessage.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Microsoft.NETCore.App" Version="2.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MessageService.Data\MessageService.Data.csproj" />
+  </ItemGroup>
+
+</Project>
